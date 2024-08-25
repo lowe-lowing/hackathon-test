@@ -17,11 +17,9 @@ export const createAndSpawnElement = (cardElement: Element) => {
   return newElement;
 };
 
-const transitionTimingFunction = "cubic-bezier(0.500, 0.250, 0.525, 1.210)";
-
 export const animateElement = (element: HTMLElement, target: Element) => {
   element.style.transition = "all 0.5s";
-  element.style.transitionTimingFunction = transitionTimingFunction;
+  element.style.transitionTimingFunction = "cubic-bezier(0.500, 0.250, 0.525, 1.210)";
   element.style.top = `${target.getBoundingClientRect().top}px`;
   element.style.left = `${target.getBoundingClientRect().left}px`;
   element.style.width = `${target.getBoundingClientRect().width}px`;
@@ -30,7 +28,6 @@ export const animateElement = (element: HTMLElement, target: Element) => {
 
 export const setParentBackground = (element: Element, color: string) => {
   const parent = element.parentElement as HTMLElement;
-  parent.style.animationTimingFunction = transitionTimingFunction;
   parent.style.transition = "all 0.5s";
   parent.style.backgroundColor = color;
 };
